@@ -1,0 +1,8 @@
+#+title: Readme
+* Tutorials
+These are some tutorials I look at to implement the dendritic-pattern nix configuration.
+** [[https:https://nix.dev/tutorials/module-system/][Nix Module System]]
+** [[https://flake.parts][Flake Parts]]
+
+
+
