@@ -1,0 +1,11 @@
+#+title: Readme
+* Motivation
+- Learn more about Nix
+- The Flake-Parts/[[github:mightyiam/dendritic][Dentrit ic]] hype
+- Simplify/atomize configuration (modularization bias)
+* OS Reqs/Specs
+1. Multiple hosts
+2. Modules for different functions.
+3. Niri
+4. Quickshell
+5. Minimal Look
