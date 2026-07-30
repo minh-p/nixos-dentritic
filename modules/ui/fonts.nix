@@ -9,6 +9,5 @@
         font-awesome_5
       ];
     };
-
   };
 }

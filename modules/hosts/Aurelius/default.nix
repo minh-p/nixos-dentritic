@@ -28,16 +28,21 @@
 
     imports = with inputs.self.modules.nixos; [
       options
+      nix-settings
+
       hardware
       fileSystems
       grub
       silentboot
       networking
       fingerprint
-      nix
 
+      fonts
       fcitx5
       thunar
+
+      firefox
+
       gpu-screen-recorder
     ];
   };
