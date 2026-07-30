@@ -3,7 +3,10 @@
     boot = {
       plymouth.enable = true;
       loader = {
-        efi = { canTouchEfiVariables = true; };
+        efi = {
+          canTouchEfiVariables = true;
+          efiSysMountPoint = "/boot/EFI";
+        };
         grub = {
           enable = true;
           useOSProber = true;

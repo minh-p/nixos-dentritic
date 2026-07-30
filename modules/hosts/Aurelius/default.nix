@@ -1,5 +1,6 @@
 { inputs, ... }: {
   flake.modules.nixos.Aurelius = {
+    nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.11";
     _module.args = {
       diskLabels = {
