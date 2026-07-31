@@ -14,5 +14,6 @@
     nixpkgs.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz";
     nixpkgs-unstable.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 }

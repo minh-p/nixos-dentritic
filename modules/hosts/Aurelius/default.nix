@@ -40,7 +40,7 @@
       grub
       silentboot
       networking
-      fingerprint
+      # fingerprint
       audio
       printing
 
