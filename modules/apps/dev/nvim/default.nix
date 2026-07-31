@@ -3,6 +3,7 @@
     "github:nix-community/nixvim/${config.nixpkgsStable}";
   flake.modules.nixos.nvim = {
     imports = [ inputs.nixvim.nixosModules.nixvim ];
+    programs.neovim = { defaultEditor = true; };
     programs.nixvim = {
       enable = true;
       colorschemes.kanagawa.enable = true;
