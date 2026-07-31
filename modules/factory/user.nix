@@ -1,6 +1,6 @@
 { self, ... }: {
   flake.factory.user = username: isAdmin: {
-    nixos.${username} = { lib, pkgs, ... }: {
+    nixos.${username} = { lib, pkgs, config, ... }: {
       users.users.${username} = {
         isNormalUser = true;
         home = "/home/${username}";
@@ -9,8 +9,11 @@
       };
       programs.zsh.enable = true;
 
-      home-manager.users."${username}" = { config, ... }: {
-        home.homeDirectory = "/home/hmp/${config.home.username}";
+      home-manager.users."${username}" = {
+        home = {
+          stateVersion = config.system.stateVersion;
+          homeDirectory = "/home/${username}";
+        };
         imports = [ self.modules.homeManager."${username}" ];
       };
     };

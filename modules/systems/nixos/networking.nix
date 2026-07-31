@@ -1,8 +1,6 @@
 {
   flake.modules.nixos.networking = { config, pkgs, ... }: {
     networking.hostName = config.myHost.name;
-    networking.useDHCP = false;
-    networking.interfaces.enp0s3.useDHCP = true;
     networking.networkmanager.enable = true;
 
     networking.networkmanager.plugins = [ pkgs.networkmanager-openconnect ];

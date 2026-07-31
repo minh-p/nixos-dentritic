@@ -8,6 +8,7 @@
           email = "minhisverynormal@gmail.com";
         };
         imports = with self.modules.homeManager; [
+          ai
           doom-emacs
           git
           spotify

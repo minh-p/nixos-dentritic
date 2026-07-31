@@ -1,5 +1,5 @@
-{ config, ... }: {
-  flake.modules.homeManager.git = {
+{
+  flake.modules.homeManager.git = { config, ... }: {
     programs.git = {
       enable = true;
       settings.user = {

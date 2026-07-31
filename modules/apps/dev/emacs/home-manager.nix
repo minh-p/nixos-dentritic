@@ -1,5 +1,5 @@
-{ lib, config, ... }: {
-  flake.modules.homeManager.doom-emacs = { pkgs, ... }:
+{
+  flake.modules.homeManager.doom-emacs = { pkgs, lib, config, ... }:
     let
       doomConfig = pkgs.fetchFromGitHub {
         owner = "minh-p";

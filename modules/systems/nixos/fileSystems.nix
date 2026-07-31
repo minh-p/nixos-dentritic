@@ -11,7 +11,7 @@
         fsType = "ext4";
       };
 
-      "/boot" = {
+      "/boot/EFI" = {
         device = "/dev/disk/by-label/${config.myHost.diskLabels.boot}";
         fsType = "vfat";
       };

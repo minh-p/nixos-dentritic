@@ -4,7 +4,7 @@
 
   flake.modules.nixos.Aurelius = { pkgs, ... }: {
     nixpkgs.hostPlatform = "x86_64-linux";
-    system.stateVersion = "26.05";
+    system.stateVersion = "24.05";
     time.timeZone = "America/Los_Angeles";
 
     myHost = {
@@ -53,6 +53,9 @@
       emacs
 
       gpu-screen-recorder
+
+      home-manager
+      hmp
     ];
   };
 
