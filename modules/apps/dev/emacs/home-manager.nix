@@ -36,5 +36,17 @@
             run chmod -R u+w "$target"
           fi
         '';
+
+      programs.emacs = {
+        enable = true;
+        package = pkgs.emacs-pgtk; # replace with pkgs.emacs-gtk if desired
+        extraPackages = epkgs: [
+          epkgs.nix-mode
+          epkgs.nixfmt
+        ];
+        extraConfig = ''
+          (setq standard-indent 2)
+        '';
+      };
     };
 }
