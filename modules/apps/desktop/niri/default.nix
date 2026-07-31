@@ -3,7 +3,7 @@
     url = "github:sodiboo/niri-flake";
     inputs.nixpkgs.follows = "nixpkgs";
   };
-  flake.modules.homeManager.niri = {osConfig, pkgs, ...}: {
+  flake.modules.homeManager.niri = {osConfig, pkgs, lib, ...}: {
     programs.niri = {
       settings = {
 	spawn-at-startup = [
@@ -18,6 +18,7 @@
           size = 12;
         }; 
 	input = {
+	  focus-follows-mouse.enable = true;
   	  keyboard = {
 	    xkb = {
   	      layout = "us";
@@ -27,11 +28,22 @@
 	    repeat-rate = 50;
 	  };
 	};
+	outputs = lib.listToAttrs (lib.forEach osConfig.myHost.peripherals.displays (info: {
+	  name = info.name;
+	  value = {
+	    transform = {
+	      rotation = info.rotation;
+	    };
+	    position = info.position;
+	  };
+	}));
+
         binds = {
 	  "Mod+Shift+Return".action.spawn = "ghostty";
 	  "Mod+Shift+B".action.spawn = "firefox";
 	  "Mod+Shift+I".action.show-hotkey-overlay = [];
-	  "Mod+Shift+E".action.quit.skip-confirmation = false;
+	  "Mod+Shift+Q".action.quit.skip-confirmation = false;
+	  "Mod+Shift+E".action.spawn = "emacsclient -nc";
 	  "Mod+Q".action.close-window = [];
 	  "Mod+H".action.focus-column-left = [];
 	  "Mod+L".action.focus-column-right = [];

@@ -26,6 +26,19 @@
           enable = false;
           driver = pkgs.libfprint-2-tod1-goodix-550a;
         };
+	displays = [
+	  {
+	    name = "DP-3";
+	  }
+	  {
+	    name = "HDMI-A-1";
+	    rotation = 270;
+	    position = {
+	      x = 3440;
+	      y = 0;
+	    };
+	  }
+	];
       };
     };
 
