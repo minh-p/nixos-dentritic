@@ -45,6 +45,7 @@
       printing
 
       greetd
+      stylix
       fonts
       fcitx5
       thunar

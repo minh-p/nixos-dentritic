@@ -9,8 +9,9 @@
       imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
       programs.spicetify = {
         enable = true;
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "macchiato";
+	# Handled by stylix
+        # theme = spicePkgs.themes.catppuccin;
+        # colorScheme = "macchiato";
         windowManagerPatch = true;
 
         enabledExtensions = with spicePkgs.extensions; [
