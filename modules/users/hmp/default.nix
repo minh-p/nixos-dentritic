@@ -2,8 +2,12 @@
   flake.modules = lib.mkMerge [
     (self.factory.user "hmp" true)
     {
-      homeManager.hmp = { pkgs, ... }: {
-        imports = with self.modules.homeManager; [ doom-emacs ];
+      homeManager.hmp = { pkgs, config, ... }: {
+        config.git = {
+          name = "minh-p";
+          email = "minhisverynormal@gmail.com";
+        };
+        imports = with self.modules.homeManager; [ doom-emacs git ];
       };
     }
   ];

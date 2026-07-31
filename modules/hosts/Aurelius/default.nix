@@ -33,6 +33,7 @@
       options
       nix-settings
       nixpkgs-unstable
+      git
 
       hardware
       fileSystems
