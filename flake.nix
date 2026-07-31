@@ -11,5 +11,6 @@
     };
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixvim.url = "github:nix-community/nixvim/nixos-26.05";
   };
 }

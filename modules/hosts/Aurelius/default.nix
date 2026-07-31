@@ -1,4 +1,5 @@
 { inputs, ... }: {
+  systems = [ "x86_64-linux" ];
   flake.modules.nixos.Aurelius = { pkgs, ... }: {
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";
@@ -42,6 +43,7 @@
       thunar
 
       firefox
+      nvim
 
       gpu-screen-recorder
     ];
