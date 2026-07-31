@@ -1,5 +1,6 @@
-{ inputs, ... }: {
-  flake-file.inputs.nixvim.url = "github:nix-community/nixvim/nixos-26.05";
+{ inputs, config, ... }: {
+  flake-file.inputs.nixvim.url =
+    "github:nix-community/nixvim/${config.nixpkgsStable}";
   flake.modules.nixos.nvim = {
     imports = [ inputs.nixvim.nixosModules.nixvim ];
     programs.nixvim = {

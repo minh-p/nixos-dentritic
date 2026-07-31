@@ -1,9 +1,14 @@
 { inputs, ... }: {
   systems = [ "x86_64-linux" ];
+  nixpkgsStable = "nixos-26.05";
+
   flake.modules.nixos.Aurelius = { pkgs, ... }: {
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";
     time.timeZone = "America/Los_Angeles";
+
+    _module.args.pkgs-unstable =
+      inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
     myHost = {
       name = "Aurelius";
