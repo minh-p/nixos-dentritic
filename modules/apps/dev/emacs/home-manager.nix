@@ -5,7 +5,7 @@
         owner = "minh-p";
         repo = "doomemacs-config";
         rev = "fb4d8b2";
-        hash = lib.fakeHash;
+        hash = "sha256-+24cPELfiaVFoGpbR1Chn1aNun41vTHuhRv0GJKsRZs=";
       };
       doomEmacs = pkgs.fetchFromGitHub {
         owner = "doomemacs";
@@ -13,7 +13,7 @@
 
         # Replace these with the revision and hash you want.
         rev = "6ba99cb";
-        hash = lib.fakeHash;
+        hash = "sha256-cmQ2/kRScuwyywxWbiofdlL/KCQL9txWQecYC63uf+k=";
       };
     in {
       home.activation.installDoomEmacs =
