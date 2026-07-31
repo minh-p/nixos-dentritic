@@ -1,10 +1,10 @@
-{ lib, inputs, ... }: {
+{ lib, self, ... }: {
   flake.modules.nixos.hardware = { config, lib, modulesPath, ... }:
     let
     in {
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
-        inputs.self.modules.nixos.firmware
+        self.modules.nixos.firmware
       ];
       config = lib.mkMerge [
         {

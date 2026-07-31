@@ -1,6 +1,6 @@
-{ inputs, ... }: {
+{ inputs, self, ... }: {
   systems = [ "x86_64-linux" ];
-  nixpkgsStable = "nixos-26.05";
+  nixpkgsStable = "26.05";
 
   flake.modules.nixos.Aurelius = { pkgs, ... }: {
     nixpkgs.hostPlatform = "x86_64-linux";
@@ -32,7 +32,7 @@
       };
     };
 
-    imports = with inputs.self.modules.nixos; [
+    imports = with self.modules.nixos; [
       options
       nix-settings
 
@@ -56,6 +56,6 @@
   };
 
   flake.nixosConfigurations.Aurelius = inputs.nixpkgs.lib.nixosSystem {
-    modules = [ inputs.self.modules.nixos.Aurelius ];
+    modules = [ self.modules.nixos.Aurelius ];
   };
 }
