@@ -42,6 +42,8 @@
       silentboot
       networking
       fingerprint
+      audio
+      printing
 
       fonts
       fcitx5
