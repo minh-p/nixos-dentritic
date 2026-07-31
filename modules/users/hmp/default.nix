@@ -7,7 +7,12 @@
           name = "minh-p";
           email = "minhisverynormal@gmail.com";
         };
-        imports = with self.modules.homeManager; [ doom-emacs git spotify ];
+        imports = with self.modules.homeManager; [
+          doom-emacs
+          git
+          spotify
+          vencord
+        ];
       };
     }
   ];
