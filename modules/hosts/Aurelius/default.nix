@@ -7,9 +7,6 @@
     system.stateVersion = "26.05";
     time.timeZone = "America/Los_Angeles";
 
-    _module.args.pkgs-unstable =
-      inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-
     myHost = {
       name = "Aurelius";
       diskLabels = {
@@ -35,6 +32,7 @@
     imports = with self.modules.nixos; [
       options
       nix-settings
+      nixpkgs-unstable
 
       hardware
       fileSystems

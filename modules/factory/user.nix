@@ -9,7 +9,8 @@
       };
       programs.zsh.enable = true;
 
-      home-manager.users."${username}" = {
+      home-manager.users."${username}" = { config, ... }: {
+        home.homeDirectory = "/home/hmp/${config.home.username}";
         imports = [ self.modules.homeManager."${username}" ];
       };
     };

@@ -3,7 +3,7 @@
     (self.factory.user "hmp" true)
     {
       homeManager.hmp = { pkgs, ... }: {
-        imports = with self.modules.homeManager; [ ];
+        imports = with self.modules.homeManager; [ doom-emacs ];
       };
     }
   ];
