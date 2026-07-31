@@ -49,6 +49,7 @@
 
       firefox
       nvim
+      emacs
 
       gpu-screen-recorder
     ];
