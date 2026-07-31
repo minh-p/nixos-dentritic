@@ -8,9 +8,12 @@
           email = "minhisverynormal@gmail.com";
         };
         imports = with self.modules.homeManager; [
+          git
+	  ghostty
+	  niri
+
           ai
           doom-emacs
-          git
           spotify
           vencord
         ];

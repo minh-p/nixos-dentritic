@@ -44,6 +44,7 @@
       audio
       printing
 
+      greetd
       fonts
       fcitx5
       thunar
@@ -54,6 +55,7 @@
 
       gpu-screen-recorder
 
+      niri
       home-manager
       hmp
     ];
