@@ -8,7 +8,9 @@
     networking.networkmanager.wifi.backend = "iwd";
 
     networking.wireless.iwd.settings = {
-      IPv6 = { Enabled = true; };
+      Network = {
+        EnableIPv6 = true;
+      };
       Settings = { AutoConnect = true; };
     };
 
