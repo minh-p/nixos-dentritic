@@ -68,6 +68,11 @@
             "Mod+Right".action.focus-column-right = [ ];
             "Mod+Down".action.focus-window-down = [ ];
             "Mod+Up".action.focus-window-up = [ ];
+
+            "Mod+Shift+Right".action.focus-monitor-right = [ ];
+            "Mod+Shift+Left".action.focus-monitor-left = [ ];
+            "Mod+Shift+J".action.focus-workspace-down = [ ];
+            "Mod+Shift+K".action.focus-workspace-up = [ ];
           };
           hotkey-overlay = {
             hide-not-bound = true;

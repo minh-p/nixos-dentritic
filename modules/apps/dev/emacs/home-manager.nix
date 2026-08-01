@@ -46,6 +46,10 @@
         pkgs.ripgrep
         pkgs.cmake
         pkgs.nixfmt
+        pkgs.gnumake
+        pkgs.libtool
+        pkgs.gcc
+        pkgs.pkg-config
       ];
       programs.emacs = {
         enable = true;
