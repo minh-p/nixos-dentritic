@@ -19,6 +19,8 @@
           direnv
           ohmyzsh
           pfetch
+
+          quickshell-ui
           niri
 
           ai
