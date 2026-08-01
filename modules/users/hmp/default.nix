@@ -17,6 +17,7 @@
           git
           ghostty
           direnv
+          ohmyzsh
           niri
 
           ai
