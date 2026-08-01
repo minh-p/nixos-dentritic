@@ -43,7 +43,7 @@
 	  "Mod+Shift+B".action.spawn = "firefox";
 	  "Mod+Shift+I".action.show-hotkey-overlay = [];
 	  "Mod+Shift+Q".action.quit.skip-confirmation = false;
-	  "Mod+Shift+E".action.spawn = "emacsclient -nc";
+	  "Mod+Shift+E".action.spawn = ["emacsclient" "-nc"];
 	  "Mod+Q".action.close-window = [];
 	  "Mod+H".action.focus-column-left = [];
 	  "Mod+L".action.focus-column-right = [];
@@ -54,6 +54,16 @@
 	  "Mod+Down".action.focus-window-down = [];
 	  "Mod+Up".action.focus-window-up = [];
 	};
+  window-rules = [
+    {
+      matches = [{ app-id = "com.mitchellh.ghostty"; }];
+      opacity = 0.88;
+    }
+    {
+      matches = [{ app-id = "emacs"; }];
+      opacity = 0.88;
+    }
+  ];
 	hotkey-overlay = {
 	  hide-not-bound = true;
 	};

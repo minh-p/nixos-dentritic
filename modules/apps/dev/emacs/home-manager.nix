@@ -37,16 +37,15 @@
           fi
         '';
 
+      home.packages = [ pkgs.ripgrep pkgs.cmake ];
       programs.emacs = {
         enable = true;
-        package = pkgs.emacs-pgtk; # replace with pkgs.emacs-gtk if desired
+        package = pkgs.emacs-pgtk;
         extraPackages = epkgs: [
           epkgs.nix-mode
           epkgs.nixfmt
+          epkgs.vterm
         ];
-        extraConfig = ''
-          (setq standard-indent 2)
-        '';
       };
     };
 }
