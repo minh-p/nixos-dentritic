@@ -18,6 +18,7 @@
           ghostty
           direnv
           ohmyzsh
+          pfetch
           niri
 
           ai

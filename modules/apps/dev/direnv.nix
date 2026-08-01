@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
   # ...other config, other config...
 
   flake.modules.homeManager.direnv = {
@@ -10,6 +10,7 @@
       };
       zsh = {
         enable = true;
+        initContent = lib.mkOrder 1500 "pfetch";
       };
     };
   };
