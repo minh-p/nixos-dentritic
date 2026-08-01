@@ -1,4 +1,10 @@
-{ self, lib, config, ... }: {
+{
+  self,
+  lib,
+  config,
+  ...
+}:
+{
   flake.modules = lib.mkMerge [
     (self.factory.user "hmp" true)
     {
@@ -9,8 +15,8 @@
         };
         imports = with self.modules.homeManager; [
           git
-	  ghostty
-	  niri
+          ghostty
+          niri
 
           ai
           doom-emacs
@@ -20,6 +26,5 @@
       };
     }
   ];
-  flake.homeConfigurations =
-    config.flake.lib.mkHomeManager "x86_64-linux" "hmp";
+  flake.homeConfigurations = config.flake.lib.mkHomeManager "x86_64-linux" "hmp";
 }

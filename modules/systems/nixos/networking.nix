@@ -11,7 +11,9 @@
       Network = {
         EnableIPv6 = true;
       };
-      Settings = { AutoConnect = true; };
+      Settings = {
+        AutoConnect = true;
+      };
     };
 
   };

@@ -1,15 +1,15 @@
 { inputs, ... }: {
-  flake-file.inputs.spicetify-nix.url =
-    "github:Gerg-L/spicetify-nix"; # These programs need to be up-to-date as illegal-mods
-  flake.modules.homeManager.spotify = { pkgs, ... }:
+  flake-file.inputs.spicetify-nix.url = "github:Gerg-L/spicetify-nix"; # These programs need to be up-to-date as illegal-mods
+  flake.modules.homeManager.spotify =
+    { pkgs, ... }:
     let
-      spicePkgs =
-        inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    in {
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
       imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
       programs.spicetify = {
         enable = true;
-	# Handled by stylix
+        # Handled by stylix
         # theme = spicePkgs.themes.catppuccin;
         # colorScheme = "macchiato";
         windowManagerPatch = true;

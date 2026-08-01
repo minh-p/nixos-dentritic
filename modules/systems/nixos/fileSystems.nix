@@ -17,7 +17,6 @@
       };
     };
 
-    swapDevices =
-      [{ device = "/dev/disk/by-label/${config.myHost.diskLabels.swap}"; }];
+    swapDevices = [ { device = "/dev/disk/by-label/${config.myHost.diskLabels.swap}"; } ];
   };
 }
