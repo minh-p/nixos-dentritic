@@ -16,6 +16,7 @@
         imports = with self.modules.homeManager; [
           git
           ghostty
+          direnv
           niri
 
           ai
@@ -26,5 +27,13 @@
       };
     }
   ];
-  flake.homeConfigurations = config.flake.lib.mkHomeManager "x86_64-linux" "hmp";
+  flake.homeConfigurations = config.flake.lib.mkHomeManager "x86_64-linux" "hmp" [
+    {
+      home = {
+        username = "hmp";
+        homeDirectory = "/home/hmp";
+        stateVersion = "24.05";
+      };
+    }
+  ];
 }

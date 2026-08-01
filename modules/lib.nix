@@ -11,13 +11,13 @@
   };
 
   config.flake.lib = {
-    mkHomeManager = system: name: {
+    mkHomeManager = system: name: extraModules: {
       ${name} = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.${system};
         modules = [
           self.modules.homeManager.${name}
           { nixpkgs.config.allowUnfree = true; }
-        ];
+        ] ++ extraModules;
       };
     };
   };
