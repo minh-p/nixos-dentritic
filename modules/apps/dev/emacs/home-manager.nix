@@ -1,5 +1,11 @@
 {
-  flake.modules.homeManager.doom-emacs = { pkgs, lib, config, ... }:
+  flake.modules.homeManager.doom-emacs =
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     let
       doomConfig = pkgs.fetchFromGitHub {
         owner = "minh-p";
@@ -15,29 +21,32 @@
         rev = "6ba99cb";
         hash = "sha256-cmQ2/kRScuwyywxWbiofdlL/KCQL9txWQecYC63uf+k=";
       };
-    in {
-      home.activation.installDoomEmacs =
-        lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-          target="${config.home.homeDirectory}/.config/emacs"
+    in
+    {
+      home.activation.installDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        target="${config.home.homeDirectory}/.config/emacs"
 
-          if [ ! -e "$target" ]; then
-            run mkdir -p "$(dirname "$target")"
-            run cp -r ${doomEmacs} "$target"
-            run chmod -R u+w "$target"
-          fi
-        '';
-      home.activation.installDoomConfig =
-        lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-          target="${config.home.homeDirectory}/.config/doom"
+        if [ ! -e "$target" ]; then
+          run mkdir -p "$(dirname "$target")"
+          run cp -r ${doomEmacs} "$target"
+          run chmod -R u+w "$target"
+        fi
+      '';
+      home.activation.installDoomConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        target="${config.home.homeDirectory}/.config/doom"
 
-          if [ ! -e "$target" ]; then
-            run mkdir -p "$(dirname "$target")"
-            run cp -r ${doomConfig} "$target"
-            run chmod -R u+w "$target"
-          fi
-        '';
+        if [ ! -e "$target" ]; then
+          run mkdir -p "$(dirname "$target")"
+          run cp -r ${doomConfig} "$target"
+          run chmod -R u+w "$target"
+        fi
+      '';
 
-      home.packages = [ pkgs.ripgrep pkgs.cmake ];
+      home.packages = [
+        pkgs.ripgrep
+        pkgs.cmake
+        pkgs.nixfmt
+      ];
       programs.emacs = {
         enable = true;
         package = pkgs.emacs-pgtk;

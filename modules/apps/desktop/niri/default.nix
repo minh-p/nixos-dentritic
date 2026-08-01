@@ -54,19 +54,21 @@
 	  "Mod+Down".action.focus-window-down = [];
 	  "Mod+Up".action.focus-window-up = [];
 	};
-  window-rules = [
-    {
-      matches = [{ app-id = "com.mitchellh.ghostty"; }];
-      opacity = 0.88;
-    }
-    {
-      matches = [{ app-id = "emacs"; }];
-      opacity = 0.88;
-    }
-  ];
 	hotkey-overlay = {
 	  hide-not-bound = true;
 	};
+	window-rules = [
+	  {
+	    matches = [{ app-id = "^com\\.mitchellh\\.ghostty$"; }];
+	    draw-border-with-background = false;
+	    opacity = 0.95;
+	  }
+	  {
+	    matches = [{ app-id = "^emacs$"; }];
+	    draw-border-with-background = false;
+	    opacity = 0.95;
+	  }
+	];
       };
     };
   };
