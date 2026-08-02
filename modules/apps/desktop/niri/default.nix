@@ -73,6 +73,18 @@
               hotkey-overlay.title = "Spawn browser";
               action.spawn = "firefox";
             };
+            "Mod+D" = {
+              hotkey-overlay.title = "Spawn launcher";
+              action.spawn = [
+                "${pkgs.quickshell}/bin/qs"
+                "-p"
+                "${quickshell-ui-dir}"
+                "ipc"
+                "call"
+                "launcher"
+                "toggle"
+              ];
+            };
             "Mod+Shift+I".action.show-hotkey-overlay = [ ];
             "Mod+Shift+Q".action.quit.skip-confirmation = false;
             "Mod+Shift+E" = {
