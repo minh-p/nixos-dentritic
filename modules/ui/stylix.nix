@@ -9,7 +9,7 @@
     stylix = {
       enable = true;
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       image = pkgs.fetchurl {
         url = "https://w.wallhaven.cc/full/8x/wallhaven-8x95oy.png";
         name = "porsche911-wallpaper.png";

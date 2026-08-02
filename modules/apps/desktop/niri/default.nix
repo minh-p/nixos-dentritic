@@ -36,7 +36,10 @@
             }
           ];
           cursor = {
-            size = 12;
+            size = 6;
+          };
+          layout = {
+            gaps = 5;
           };
           input = {
             focus-follows-mouse.enable = true;
@@ -115,6 +118,15 @@
             hide-not-bound = true;
           };
           window-rules = [
+            {
+              geometry-corner-radius = {
+                bottom-left = 12.0;
+                bottom-right = 12.0;
+                top-right = 12.0;
+                top-left = 12.0;
+              };
+              clip-to-geometry = true;
+            }
             {
               matches = [ { app-id = "^com\\.mitchellh\\.ghostty$"; } ];
               draw-border-with-background = false;
