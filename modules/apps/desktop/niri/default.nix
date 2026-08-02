@@ -106,8 +106,8 @@
             "Mod+Down".action.focus-window-down = [ ];
             "Mod+Up".action.focus-window-up = [ ];
 
-            "Mod+Shift+Right".action.focus-monitor-right = [ ];
-            "Mod+Shift+Left".action.focus-monitor-left = [ ];
+            "Mod+Shift+L".action.focus-monitor-right = [ ];
+            "Mod+Shift+H".action.focus-monitor-left = [ ];
             "Mod+Shift+J".action.focus-workspace-down = [ ];
             "Mod+Shift+K".action.focus-workspace-up = [ ];
             "Mod+Print".action.screenshot-screen = {
