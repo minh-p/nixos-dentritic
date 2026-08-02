@@ -20,7 +20,6 @@
           ohmyzsh
           pfetch
 
-          quickshell-ui
           niri
 
           ai

@@ -10,8 +10,12 @@
       lib,
       ...
     }:
+    let
+      quickshell-ui-dir = "${../quickshell-ui}";
+    in
     {
       programs.niri = {
+        package = pkgs.niri;
         settings = {
           spawn-at-startup = [
             {
@@ -21,6 +25,13 @@
                 "${osConfig.stylix.image}"
                 "--mode"
                 "fill"
+              ];
+            }
+            {
+              argv = [
+                "${pkgs.quickshell}/bin/qs"
+                "-p"
+                "${quickshell-ui-dir}"
               ];
             }
           ];
@@ -51,14 +62,37 @@
           );
 
           binds = {
-            "Mod+Shift+Return".action.spawn = "ghostty";
-            "Mod+Shift+B".action.spawn = "firefox";
+            "Mod+Shift+Return" = {
+              hotkey-overlay.title = "Spawn terminal";
+              action.spawn = "ghostty";
+            };
+            "Mod+Shift+B" = {
+              hotkey-overlay.title = "Spawn browser";
+              action.spawn = "firefox";
+            };
             "Mod+Shift+I".action.show-hotkey-overlay = [ ];
             "Mod+Shift+Q".action.quit.skip-confirmation = false;
-            "Mod+Shift+E".action.spawn = [
-              "emacsclient"
-              "-nc"
-            ];
+            "Mod+Shift+E" = {
+              hotkey-overlay.title = "Spawn emacs";
+              action.spawn = [
+                "emacsclient"
+                "-nc"
+              ];
+            };
+            "Mod+O" = {
+              hotkey-overlay.title = "Toggle bar";
+              action = {
+                spawn = [
+                  "${pkgs.quickshell}/bin/qs"
+                  "-p"
+                  "${quickshell-ui-dir}"
+                  "ipc"
+                  "call"
+                  "root"
+                  "toggleBar"
+                ];
+              };
+            };
             "Mod+Q".action.close-window = [ ];
             "Mod+H".action.focus-column-left = [ ];
             "Mod+L".action.focus-column-right = [ ];
@@ -95,8 +129,9 @@
         };
       };
     };
-  flake.modules.nixos.niri = {
+  flake.modules.nixos.niri = { pkgs, ... }: {
     imports = [ inputs.niri.nixosModules.niri ];
     programs.niri.enable = true;
+    programs.niri.package = pkgs.niri;
   };
 }
