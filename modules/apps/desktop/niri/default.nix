@@ -100,7 +100,7 @@
                   "${quickshell-ui-dir}"
                   "ipc"
                   "call"
-                  "root"
+                  "bar"
                   "toggleBar"
                 ];
               };
