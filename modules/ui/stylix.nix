@@ -8,6 +8,17 @@
     imports = [ inputs.stylix.nixosModules.stylix ];
     stylix = {
       enable = true;
+      icons = {
+        enable = true;
+        dark = "Paprius-Dark";
+        light = "Papirus-Light";
+        package = pkgs.papirus-icon-theme;
+      };
+      cursor = {
+        package = pkgs.bibata-cursors;
+        size = 24;
+        name = "Bibata-Modern-Ice";
+      };
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       image = pkgs.fetchurl {

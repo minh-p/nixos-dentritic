@@ -35,9 +35,6 @@
               ];
             }
           ];
-          cursor = {
-            size = 6;
-          };
           layout = {
             gaps = 5;
           };
