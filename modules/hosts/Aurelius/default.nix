@@ -72,6 +72,7 @@
       niri
       home-manager
       hmp
+      flatpak
     ];
   };
 
