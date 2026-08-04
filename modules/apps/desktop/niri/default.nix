@@ -70,6 +70,7 @@
               hotkey-overlay.title = "Spawn browser";
               action.spawn = "firefox";
             };
+            "Mod+F".action.fullscreen-window = [ ];
             "Mod+D" = {
               hotkey-overlay.title = "Spawn launcher";
               action.spawn = [

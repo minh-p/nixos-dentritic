@@ -73,6 +73,7 @@
       home-manager
       hmp
       flatpak
+      studying
     ];
   };
 
