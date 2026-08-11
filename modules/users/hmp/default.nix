@@ -26,6 +26,7 @@
           doom-emacs
           spotify
           vencord
+          thunar
         ];
       };
     }

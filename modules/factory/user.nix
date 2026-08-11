@@ -11,7 +11,10 @@
         users.users.${username} = {
           isNormalUser = true;
           home = "/home/${username}";
-          extraGroups = lib.optionals isAdmin [ "wheel" ];
+          extraGroups = lib.optionals isAdmin [
+            "wheel"
+            "networkmanager"
+          ];
           shell = pkgs.zsh;
         };
         programs.zsh.enable = true;

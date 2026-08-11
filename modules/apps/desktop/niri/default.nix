@@ -123,6 +123,12 @@
             "Mod+Print".action.screenshot-screen = {
               show-pointer = false;
             };
+            "Print".action.screenshot = {
+              show-pointer = false;
+            };
+            "Ctrl+Print".action.screenshot-window = {
+              show-pointer = false;
+            };
           };
           hotkey-overlay = {
             hide-not-bound = true;
