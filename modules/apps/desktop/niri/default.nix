@@ -43,7 +43,7 @@
             keyboard = {
               xkb = {
                 layout = "us";
-                options = "caps:swapescape";
+                options = "ctrl:nocaps";
               };
               repeat-delay = 300;
               repeat-rate = 50;
@@ -70,7 +70,10 @@
               hotkey-overlay.title = "Spawn browser";
               action.spawn = "firefox";
             };
-            "Mod+F".action.fullscreen-window = [ ];
+            "Mod+F".action.maximize-column = [ ];
+            "Mod+M".action.maximize-window-to-edges = [ ];
+            "Mod+Shift+F".action.fullscreen-window = [ ];
+            "Mod+Ctrl+F".action.toggle-windowed-fullscreen = [ ];
             "Mod+D" = {
               hotkey-overlay.title = "Spawn launcher";
               action.spawn = [
