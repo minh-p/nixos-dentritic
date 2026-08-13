@@ -23,7 +23,7 @@
           niri
 
           ai
-          doom-emacs
+          base-emacs
           spotify
           vencord
           thunar
