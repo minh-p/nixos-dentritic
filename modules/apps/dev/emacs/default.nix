@@ -18,6 +18,7 @@
         pkgs.libtool
         pkgs.gcc
         pkgs.pkg-config
+        pkgs.ispell
       ];
       programs.emacs = {
         enable = true;
