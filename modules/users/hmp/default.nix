@@ -27,6 +27,7 @@
           spotify
           vencord
           thunar
+          library
         ];
       };
     }
