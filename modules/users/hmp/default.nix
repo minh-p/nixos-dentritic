@@ -28,6 +28,7 @@
           vencord
           thunar
           library
+          latex
         ];
       };
     }
