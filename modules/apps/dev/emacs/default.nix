@@ -19,6 +19,7 @@
         pkgs.gcc
         pkgs.pkg-config
         pkgs.ispell
+        pkgs.mermaid-cli
       ];
       programs.emacs = {
         enable = true;

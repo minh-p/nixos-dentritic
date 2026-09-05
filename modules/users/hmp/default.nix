@@ -29,6 +29,7 @@
           thunar
           library
           latex
+          tailscale
         ];
       };
     }

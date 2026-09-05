@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.latex = { pkgs, ... }: {
     home.packages = [
-      (pkgs.texliveBasics.withPackages (
+      (pkgs.texliveBasic.withPackages (
         ps: with ps; [
           dvisvgm
           dvipng
