@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.audio = {
+  flake.modules.nixos.audio = { pkgs, ... }: {
     services.pipewire = {
       enable = true;
       alsa.enable = true;
@@ -8,5 +8,7 @@
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
     };
+
+    environment.systemPackages = [ pkgs.pavucontrol ];
   };
 }

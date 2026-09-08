@@ -74,6 +74,7 @@
       hmp
       flatpak
       studying
+      tailscale
     ];
   };
 
