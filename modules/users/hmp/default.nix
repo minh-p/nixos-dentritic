@@ -29,7 +29,6 @@
           thunar
           library
           latex
-          zoom
         ];
       };
     }
